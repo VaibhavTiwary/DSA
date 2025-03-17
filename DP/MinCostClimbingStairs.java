@@ -15,6 +15,7 @@
 // The total cost is 15.
 
 //RECURSIVE SOLUTION
+// TC- O(2^n)
 class Solution {
     static int minCostClimbingStairs(int[] cost) {
         
@@ -26,13 +27,14 @@ class Solution {
             return 0;
         }
         
-        return cost[start] + Math.min(solve(cost, start + 1), 
-                                      solve(cost, start + 2));
+        return cost[start] + Math.min(solve(cost, start + 1), solve(cost, start + 2));
+                                      
     }
 };
 
 
 //MEMOIZATION
+// TC- O(N)
 class Solution {
     public int minCostClimbingStairs(int[] cost) {
         
@@ -60,7 +62,7 @@ class Solution {
     public int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
         int[] dp = new int[n + 1]; // Store minimum cost to reach each step
-
+        // dp[0] and dp[1] = 0 as in java by default 0 is stored
         for (int i = 2; i <= n; i++) {
             int costFromOneStep = dp[i - 1] + cost[i - 1]; // Coming from i-1
             int costFromTwoSteps = dp[i - 2] + cost[i - 2]; // Coming from i-2
