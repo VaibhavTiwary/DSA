@@ -78,7 +78,6 @@ class Solution {
 //O(N Log N)
 
 class Solution {
-
     public int lengthOfLIS(int[] nums){
     
         int size = nums.length;
