@@ -135,3 +135,27 @@ public class UniquePaths {
 }
 
 
+//Print Unique Paths
+class Solution {
+    public List<String> uniquePathsInRDForm(int m, int n) {
+        List<String> result = new ArrayList<>();
+        backtrack(0, 0, m, n, "", result);
+        return result;
+    }
+
+    private void backtrack(int row, int col, int m, int n, String path, List<String> result) {
+        if (row >= m || col >= n) return;
+
+        if (row == m - 1 && col == n - 1) {
+            result.add(path);
+            return;
+        }
+
+        // Move Right
+        backtrack(row, col + 1, m, n, path + "R", result);
+        // Move Down
+        backtrack(row + 1, col, m, n, path + "D", result);
+    }
+}
+
+
