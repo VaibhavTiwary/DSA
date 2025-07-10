@@ -15,7 +15,9 @@
 //   ["0","0","0","0","0"]
 // ]
 // Output: 1
-
+//..............................
+// "Both have same time complexity, but for large connected regions, I prefer BFS to avoid stack overflow. 
+// If the grid is small or recursion is allowed, DFS is simpler and shorter to write."
 
 //BFS Solution
 // TC and SC- O(m*n)
@@ -80,6 +82,7 @@ class Solution {
 
 
 //DFS
+// "In the worst case, if the island covers the entire grid, the recursion depth can be m * n, which risks stack overflow."
 class Solution {
     public int numIslands(char[][] grid) {
         int m = grid.length;
