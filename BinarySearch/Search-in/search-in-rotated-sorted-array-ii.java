@@ -20,6 +20,9 @@ class Solution {
                 return true;
             }
 
+// Duplicates (like [2, 2, 2, 3, 2, 2]) make it impossible to decide which side is sorted
+//  if all three — left, mid, right — are same. So, we shrink the window by doing left++ and right--.
+
             if (nums[left] == nums[mid] && nums[mid] == nums[right]) {
                 left++;
                 right--;
