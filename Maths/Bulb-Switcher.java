@@ -60,4 +60,4 @@ class Solution {
 // Why?
 // Divisors usually come in pairs (d, k/d).
 
-// Only when d = k/d (i.e., k is a perfect square) do we get an unpaired divisor → odd count.
+// Only when d = k/d (i.e., k is a perfect square) do we get an unpaired divisor → odd count. b 
